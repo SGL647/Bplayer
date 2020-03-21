@@ -1,8 +1,8 @@
 ﻿    if( diyvodid > 0)
-	{var dmid=diyid+" "+diysid,dmsid=diysid;}
+	{var dmid=diyid,dmsid=diysid;}
 	else
 	{
-	var dmid=vodid,dmsid=vodsid;
+	var dmid=vodid+" "+vodsid,dmsid=vodsid;
 	}
         if( laoding > 0){}else{ var css ='<style type="text/css">';css+='#loading-box{display: none;}';css+='</style>';$('body').append(css).addClass("");}    // 加载播放器
     if( danmuon > 0){
