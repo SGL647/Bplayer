@@ -19,7 +19,7 @@ var YZM = {
 	}(),
 	'start': function() {
 		$.ajax({
-			url: "/Danmu/admin/api.php",
+			url: "/admin/api.php",
 			dataType: "json",
 			success: function(e) {
 				YZM.waittime = e.data.waittime
@@ -29,7 +29,8 @@ var YZM = {
 				up.trysee = e.data.trytime;
 				config.sendtime = e.data.sendtime;
 				config.color = e.data.color;
-				config.group_x = YZM.ads.set.group;
+				//config.group_x = YZM.ads.set.group;
+				config.group_x = 2;
 				config.dmrule = e.data.dmrule;
 				//config.group = YZM.getCookie('group_id');
 				danmuon = e.data.danmuon;
@@ -158,11 +159,13 @@ var YZM = {
 			}, 1 * 1500);
 		},
 		'next': function() {
-			top.location.href = up.mylink + config.next;
+			//top.location.href = up.mylink + config.next;
+			top.location.href = up.mysite + config.next;
 		},
 		'try': function() {
-			//if (up.trysee > 0 && config.group < config.group_x && config.group != '') {
-			if (up.trysee > 0 && config.group <= 1 && config.group != '') {
+			//alert(config.group+config.group_x);
+			if (up.trysee > 0 && config.group < config.group_x && config.group != '') {
+			//if (up.trysee > 0 && config.group <= 1 && config.group != '') {
 				$('#dmtext').attr({
 					"disabled": true,
 					"placeholder": "登陆后才能发弹幕yo(・ω・)"
@@ -178,10 +181,12 @@ var YZM = {
 							title: '温馨提示',
 							btn: ['登录', '注册'],
 							yes: function(index, layero) {
-								top.location.href = up.mylink + "/index.php/user/login.html";
+								//top.location.href = up.mylink + "index.php/user/login.html";
+								top.location.href = up.mysite + "/index.php/user/login.html";
 							},
 							btn2: function(index, layero) {
-								top.location.href = up.mylink + "/index.php/user/reg.html";
+								//top.location.href = up.mylink + "index.php/user/reg.html";
+								top.location.href = up.mysite + "/index.php/user/reg.html";
 							}
 						});
 					}
